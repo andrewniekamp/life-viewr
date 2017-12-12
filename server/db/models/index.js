@@ -1,18 +1,30 @@
 const User = require('./user')
+const Organism = require('./organism');
 
-/**
- * If we had any associations to make, this would be a great place to put them!
- * ex. if we had another model called BlogPost, we might say:
- *
- *    BlogPost.belongsTo(User)
- */
+const Kingdom = require('./kingdom');
+const Phylum = require('./phylum');
+const Class = require('./class');
+const Order = require('./order');
+const Family = require('./family');
+const Genus = require('./genus');
+const Specie = require('./specie');
 
-/**
- * We'll export all of our models here, so that any time a module needs a model,
- * we can just require it from 'db/models'
- * for example, we can say: const {User} = require('../db/models')
- * instead of: const User = require('../db/models/user')
- */
+Organism.hasOne(Kingdom);
+Organism.hasOne(Phylum);
+Organism.hasOne(Class);
+Organism.hasOne(Order);
+Organism.hasOne(Family);
+Organism.hasOne(Genus);
+Organism.hasOne(Specie);
+
 module.exports = {
-  User
+  User,
+  Organism,
+  Kingdom,
+  Phylum,
+  Class,
+  Order,
+  Family,
+  Genus,
+  Specie
 }
