@@ -14,6 +14,10 @@ A Code Challenge for Cedrus Digital
 
 * Clone the repository
 * Navigate to the repository directory
-* npm install
+* Install dependencies
+  * npm install
 * Create a PostgreSQL database named: life-viewr
-* Run the seed file?
+* Run the seed file
+  * npm run seed
+* Run the application
+  * npm run start-dev
