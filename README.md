@@ -18,6 +18,7 @@ A Code Challenge for Cedrus Digital
 * I have a form for adding a new organism if the user is logged in, but it looks like there is some error with actually creating related data that I have yet to sort out. The form does create a new organism, but does not seem to create the related data (kingdom, phylum, etc.) and though it does update the store with the new org, it isn't terribly useful without that data!
 * I didn't get to the search/sort functionality, but that would have been next after ironing out the issue with adding a new organism
 * I would also do more styling. I like design, but it can be time consuming to design and implement that design in such a short time.
+* Update: fixed add form at the last minute
 
 ## Installation/Setup
 
