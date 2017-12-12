@@ -1,30 +1,82 @@
-/**
- * Welcome to the seed file! This seed file uses a newer language feature called...
- *
- *                  -=-= ASYNC...AWAIT -=-=
- *
- * Async-await is a joy to use! Read more about it in the MDN docs:
- *
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
- *
- * Now that you've got the main idea, check it out in practice below!
- */
 const db = require('../server/db')
-const {User} = require('../server/db/models')
+const { User, Organism} = require('../server/db/models')
 
 async function seed () {
   await db.sync({force: true})
   console.log('db synced!')
-  // Whoa! Because we `await` the promise that db.sync returns, the next line will not be
-  // executed until that promise resolves!
 
   const users = await Promise.all([
-    User.create({email: 'cody@email.com', password: '123'}),
-    User.create({email: 'murphy@email.com', password: '123'})
+    User.create({email: 'test1@example.com', password: '123'}),
+    User.create({email: 'test2@example.com', password: '123'})
   ])
-  // Wowzers! We can even `await` on the right-hand side of the assignment operator
-  // and store the result that the promise resolves to in a variable! This is nice!
-  console.log(`seeded ${users.length} users`)
+
+  // Create with associations for quickness
+  const organisms = await Promise.all([
+    Organism.create({
+      name: 'Tiger',
+      kingdom: {
+        name: 'Animalia',
+        description: ''
+      },
+      phylum: {
+        name: 'Chordata',
+        description: ''
+      },
+      class: {
+        name: 'Mammalia',
+        description: ''
+      },
+      order: {
+        name: 'Carnivora',
+        description: ''
+      },
+      family: {
+        name: 'Felidae',
+        description: ''
+      },
+      genus: {
+        name: 'Panthera',
+        description: ''
+      },
+      species: {
+        name: 'Panthera tigris',
+        description: ''
+      }
+    }, { include: [{ all: true }]} ),
+    Organism.create({
+      name: 'Orangutan',
+      kingdom: {
+        name: 'Animalia',
+        description: ''
+      },
+      phylum: {
+        name: 'Chordata',
+        description: ''
+      },
+      class: {
+        name: 'Mammalia',
+        description: ''
+      },
+      order: {
+        name: 'Primates',
+        description: ''
+      },
+      family: {
+        name: 'Hominidae',
+        description: ''
+      },
+      genus: {
+        name: 'Pongo',
+        description: ''
+      },
+      species: {
+        name: 'Pongo pygmaeus',
+        description: ''
+      }
+    }, { include: [{ all: true }]} )
+  ])
+
+  console.log(`seeded ${users.length} users, ${organisms.length} organisms`)
   console.log(`seeded successfully`)
 }
 
