@@ -7,7 +7,7 @@ const Class = require('./class');
 const Order = require('./order');
 const Family = require('./family');
 const Genus = require('./genus');
-const Specie = require('./specie');
+const Species = require('./species');
 
 Organism.hasOne(Kingdom);
 Organism.hasOne(Phylum);
@@ -15,7 +15,7 @@ Organism.hasOne(Class);
 Organism.hasOne(Order);
 Organism.hasOne(Family);
 Organism.hasOne(Genus);
-Organism.hasOne(Specie);
+Organism.hasOne(Species);
 
 module.exports = {
   User,
@@ -26,5 +26,5 @@ module.exports = {
   Order,
   Family,
   Genus,
-  Specie
+  Species
 }

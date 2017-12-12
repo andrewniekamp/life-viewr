@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const Specie = db.define('specie', {
+const Species = db.define('species', {
   name: Sequelize.STRING,
   description: Sequelize.TEXT
 })
 
-module.exports = Specie;
+module.exports = Species;

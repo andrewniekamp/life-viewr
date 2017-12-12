@@ -1,7 +1,7 @@
 {
-  "name": "boilermaker",
+  "name": "life-viewr",
   "version": "1.0.0",
-  "description": "Some boilerplate code to get you started - get shakin'!",
+  "description": "A new web application for inquisitive minds and fans of National Geographic and Planet Earth",
   "engines": {
     "node": ">= 7.0.0"
   },
