@@ -22,7 +22,6 @@ form div {
 
 .organism-container {
   padding: 3%;
-  background-color: steelblue;
 }
 .organism-name {
 
@@ -32,4 +31,18 @@ form div {
 }
 .organism-image {
   width: 100%;
+}
+.organism-classifications-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.organism-classification {
+  margin: 1%;
+  padding: 1%;
+  background-color: white;
+}
+.organism-classification h4, p {
+  margin: 2%;
 }
