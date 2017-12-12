@@ -16,9 +16,13 @@ export class Organisms extends React.Component {
         { this.props.organisms && this.props.organisms.map( org => {
           return (
             <div key={org.id}>
-              <h3>{org.name}</h3>
-              <p>{org.description}</p>
-              <img src={org.imageURL} />
+              <div className="organism-container">
+                <h3 className="organism-name">{org.name}</h3>
+                <p className="organism-description">{org.description}</p>
+              </div>
+              <div className="organism-image-container">
+                <img className="organism-image" src={org.imageURL} />
+              </div>
             </div>
           )
         })}
@@ -28,7 +32,8 @@ export class Organisms extends React.Component {
 }
 const mapState = (state) => {
   return {
-    organisms: state.organisms
+    organisms: state.organisms,
+    filter: state.filter
   }
 }
 
